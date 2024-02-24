@@ -15,11 +15,11 @@ app.MapGet("/", async context => {
     var calcService = app.Services.GetService<ICalcService>();
     var timeService = app.Services.GetService<ITimeService>();
     DateTime dateTime = DateTime.Now;
-    await context.Response.WriteAsync($"\nПоточний час доби: {timeService?.GetTimeDay(dateTime)}\n");
-    await context.Response.WriteAsync($"\nРезультат додавання: {calcService?.Addition(1, 2, 3, 4, 5)}\n" +
-$"\nРезультат віднімання: {calcService?.Subtraction(1, 2, 3, 4, 5)}\n" +
-$"\nРезультат множення: {calcService?.Multiplication(1f, 2f, 3f, 4f, 5f)}\n" +
-$"\nРезультат ділення: {calcService?.Division(1.0, 2.0, 3.0, 4.0, 5.0)}\n");
+    await context.Response.WriteAsync($"\nРџРѕС‚РѕС‡РЅРёР№ С‡Р°СЃ РґРѕР±Рё: {timeService?.GetTimeDay(dateTime)}\n");
+    await context.Response.WriteAsync($"\nР РµР·СѓР»СЊС‚Р°С‚ РґРѕРґР°РІР°РЅРЅСЏ: {calcService?.Addition(1, 2, 3, 4, 5)}\n" +
+$"\nР РµР·СѓР»СЊС‚Р°С‚ РІС–РґРЅС–РјР°РЅРЅСЏ: {calcService?.Subtraction(1, 2, 3, 4, 5)}\n" +
+$"\nР РµР·СѓР»СЊС‚Р°С‚ РјРЅРѕР¶РµРЅРЅСЏ: {calcService?.Multiplication(1f, 2f, 3f, 4f, 5f)}\n" +
+$"\nР РµР·СѓР»СЊС‚Р°С‚ РґС–Р»РµРЅРЅСЏ: {calcService?.Division(1.0, 2.0, 3.0, 4.0, 5.0)}\n");
 });
 
 app.Run();
